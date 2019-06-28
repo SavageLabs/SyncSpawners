@@ -1,0 +1,9 @@
+name: dSpawners
+main: me.driftay.spawners.dSpawners
+version: ${project.version}
+authors:
+  - Driftay
+  - FroggyKnight
+commands:
+  dSpawner:
+    usage: 'dSpawner command!'
