@@ -2,12 +2,14 @@
 #######################################################################################
 #######################################################################################
 #####                                                                             #####
-#####                  dSpawners (Synchronous Spawners)                           #####
-#####                 Created By FroggyKnight & Driftay                           #####
+#####                 SyncSpawners (Synchronous Spawners)                         #####
+#####                  Created By FroggyKnight & Driftay                          #####
 #####                                                                             #####
 #######################################################################################
 #######################################################################################
 #######################################################################################
+
+#Don't be intimidated by this single line in the config, this plugin was designed for complete performance, and is unique to all servers!
 
 
 #Time In Seconds For Spawner Sync

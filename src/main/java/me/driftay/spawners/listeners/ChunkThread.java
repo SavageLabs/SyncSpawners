@@ -1,6 +1,6 @@
 package me.driftay.spawners.listeners;
 
-import me.driftay.spawners.dSpawners;
+import me.driftay.spawners.SyncSpawners;
 import org.bukkit.Chunk;
 import org.bukkit.block.BlockState;
 import org.bukkit.block.CreatureSpawner;
@@ -15,8 +15,8 @@ public class ChunkThread extends java.lang.Thread {
             try {
                 ChunkThread.sleep(100L);
                 //
-                for (int i = dSpawners.chunk_queue_load.size() - 1; i >= 0; i--){
-                    Chunk chunk = dSpawners.chunk_queue_load.get(i);
+                for (int i = SyncSpawners.chunk_queue_load.size() - 1; i >= 0; i--){
+                    Chunk chunk = SyncSpawners.chunk_queue_load.get(i);
                     if (chunk != null && chunk.isLoaded()){
 
                         for (BlockState blockState : chunk.getTileEntities()){
@@ -25,18 +25,18 @@ public class ChunkThread extends java.lang.Thread {
                                 CreatureSpawner creatureSpawner = (CreatureSpawner)blockState;
 
                                 if (creatureSpawner != null){
-                                    if (!dSpawners.creatureSpawners.contains(creatureSpawner)){
-                                        dSpawners.creatureSpawners.add(creatureSpawner);
+                                    if (!SyncSpawners.creatureSpawners.contains(creatureSpawner)){
+                                        SyncSpawners.creatureSpawners.add(creatureSpawner);
                                        // System.out.print("\n\n\n Added a loaded spawner... \n\n\n");
                                     }
                                 }
                             }
                         }
-                        dSpawners.chunk_queue_load.remove(chunk);
+                        SyncSpawners.chunk_queue_load.remove(chunk);
                     }
                 }
-                for (int i = dSpawners.chunk_queue_unload.size() - 1; i >= 0; i--){
-                    Chunk chunk = dSpawners.chunk_queue_unload.get(i);
+                for (int i = SyncSpawners.chunk_queue_unload.size() - 1; i >= 0; i--){
+                    Chunk chunk = SyncSpawners.chunk_queue_unload.get(i);
                     if (chunk != null && chunk.isLoaded()){
 
                         for (BlockState blockState : chunk.getTileEntities()){
@@ -45,14 +45,14 @@ public class ChunkThread extends java.lang.Thread {
                                 CreatureSpawner creatureSpawner = (CreatureSpawner)blockState;
 
                                 if (creatureSpawner != null){
-                                    if (dSpawners.creatureSpawners.contains(creatureSpawner)){
-                                        dSpawners.creatureSpawners.remove(creatureSpawner);
+                                    if (SyncSpawners.creatureSpawners.contains(creatureSpawner)){
+                                        SyncSpawners.creatureSpawners.remove(creatureSpawner);
                                        // System.out.print("\n\n\n Removed a loaded spawner... \n\n\n");
                                     }
                                 }
                             }
                         }
-                        dSpawners.chunk_queue_unload.remove(chunk);
+                        SyncSpawners.chunk_queue_unload.remove(chunk);
                     }
                 }
 

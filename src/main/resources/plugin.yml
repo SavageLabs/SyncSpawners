@@ -1,9 +1,13 @@
-name: dSpawners
-main: me.driftay.spawners.dSpawners
+name: SyncSpawners
+main: me.driftay.spawners.SyncSpawners
 version: ${project.version}
 authors:
   - Driftay
   - FroggyKnight
 commands:
-  dSpawner:
-    usage: 'dSpawner command!'
+  syncspawners:
+    description: Default Command for SyncSpawners
+
+permissions:
+  syncspawners.admin:
+    description: Administration Rights To SyncSpawners

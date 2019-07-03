@@ -1,6 +1,6 @@
 package me.driftay.spawners.utils;
 
-import me.driftay.spawners.dSpawners;
+import me.driftay.spawners.SyncSpawners;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 
@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Utils {
 
-    public static FileConfiguration config = dSpawners.instance.getConfig();
+    public static FileConfiguration config = SyncSpawners.instance.getConfig();
 
     public static String color(String message) {
         return ChatColor.translateAlternateColorCodes('&', message);

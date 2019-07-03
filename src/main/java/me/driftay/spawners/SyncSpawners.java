@@ -1,6 +1,6 @@
 package me.driftay.spawners;
 
-import me.driftay.spawners.commands.dSpawnerCMD;
+import me.driftay.spawners.commands.CmdSyncReload;
 import me.driftay.spawners.file.CustomFile;
 import me.driftay.spawners.file.impl.MessageFile;
 import me.driftay.spawners.listeners.ChunkThread;
@@ -16,8 +16,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class dSpawners extends JavaPlugin {
-    public static dSpawners instance;
+public class SyncSpawners extends JavaPlugin {
+    public static SyncSpawners instance;
     private FileManager fileManager;
 
     public static List<CreatureSpawner> creatureSpawners = new ArrayList<>();
@@ -38,7 +38,7 @@ public class dSpawners extends JavaPlugin {
 
         Bukkit.getPluginManager().registerEvents(new Event(), this);
 
-        getCommand("dSpawner").setExecutor(new dSpawnerCMD());
+        getCommand("syncspawners").setExecutor(new CmdSyncReload());
 
         startTimer();
 

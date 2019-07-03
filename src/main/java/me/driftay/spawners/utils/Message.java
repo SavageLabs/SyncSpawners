@@ -3,7 +3,7 @@ package me.driftay.spawners.utils;
 import java.util.List;
 
 public enum Message {
-    COMMAND_FORMAT("command-format", "&c&l[!] &7Try /dspawner reload"),
+    COMMAND_FORMAT("command-format", "&c&l[!] &7Try /syncspawners reload"),
     RELOADED("reloaded", "&c&l[!] &2Configuration Reloaded Successfully!"),
     NO_PERMISSION("no-permission", "&c&l[!] &7You do not have permission.");
 
