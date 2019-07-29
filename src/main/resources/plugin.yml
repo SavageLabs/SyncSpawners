@@ -1,0 +1,19 @@
+name: SyncSpawners
+main: me.driftay.spawners.SyncSpawners
+version: ${project.version}
+authors:
+  - Driftay
+  - FroggyKnight
+  - Ryder
+commands:
+  ss:
+    description: Default Command for SyncSpawners
+    aliases:
+      - syncspawners
+permissions:
+  syncspawners.admin:
+    description: Access to all commands.
+  syncspawners.reload:
+    description: Reloads the plugin.
+  syncspawners.help:
+    description: Shows the help menu.
