@@ -7,7 +7,6 @@ import me.driftay.spawners.utils.enums.Message;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
 
 public class Commands implements CommandExecutor {
 
@@ -22,16 +21,21 @@ public class Commands implements CommandExecutor {
             return true;
         } else {
             if (args[0].equalsIgnoreCase("reload")) {
+                String msg = Files.LANG.getFile().getString("Messages.Config-Reload");
 
                 if (!Methods.hasPermission(p, "reload", true)) {
                     return true;
                 }
-                Files.CONFIG.reloadFile();
-                Files.LANG.reloadFile();
-                SyncSpawners.startTimer();
-                p.sendMessage(Message.CONFIG_RELOAD.getMessage());
+                if (!msg.equals("")) {
+                    Files.CONFIG.reloadFile();
+                    Files.LANG.reloadFile();
+                    SyncSpawners.startTimer();
+                    p.sendMessage(Message.CONFIG_RELOAD.getMessage());
+                } else {
+                    return true;
+                }
             }
+            return true;
         }
-        return true;
     }
 }
